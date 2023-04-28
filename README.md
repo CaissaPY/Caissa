@@ -1,2 +1,2 @@
 # Caissa
- diseño y desarrollo de software
+ diseño y desarrollo de videojuegos
