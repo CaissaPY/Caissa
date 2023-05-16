@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PjController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private float MeleeAttack;
     private float DistanceAttack;

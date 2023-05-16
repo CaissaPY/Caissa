@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219636593067429724, guid: d868812153a595740b1eacd71f2b441a, type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8219636593067429724, guid: d868812153a595740b1eacd71f2b441a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -287,6 +287,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &379217236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379217237}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &379217237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379217236}
+  m_LocalRotation: {x: -0, y: -0, z: 0.07120868, w: 0.99746144}
+  m_LocalPosition: {x: 0.0467, y: 0.0431, z: -0.012304143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 517923368}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399555147
 GameObject:
@@ -573,7 +604,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 633477529341083237, guid: e21691f96024f084a8e18607cf046b35, type: 3}
       propertyPath: m_Name
-      value: VaraWater
+      value: MagicStaff
       objectReference: {fileID: 0}
     - target: {fileID: 2500515222871997821, guid: e21691f96024f084a8e18607cf046b35, type: 3}
       propertyPath: m_SortingLayer
@@ -724,7 +755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1437.0596, y: 401.31934, z: 9.531839}
+  m_LocalPosition: {x: 19104.883, y: 5308.968, z: -142.80617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -971,6 +1002,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &735110261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 633477529341083237, guid: e21691f96024f084a8e18607cf046b35, type: 3}
+  m_PrefabInstance: {fileID: 517923367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735110263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735110261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4418ad0c869974abbb4557c69af92eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7178699666782074307, guid: f5a98b09d978c164693bebb034a77af7, type: 3}
+  shooter: {fileID: 735110261}
+  playerController: {fileID: 448582132}
+  BulletType: WaterMagicBullet
 --- !u!1 &808359846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859149557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6258545, y: 0.4517212, z: 9.985981}
+  m_LocalPosition: {x: 1.6269531, y: 0.45166016, z: 9.985977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1277,7 +1329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873561334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6258545, y: 0.4517212, z: -0.014019012}
+  m_LocalPosition: {x: 1.6269531, y: 0.45166016, z: -0.014022827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1457,7 +1509,7 @@ Transform:
   m_Children:
   - {fileID: 448582136}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009442281
 GameObject:
@@ -1490,7 +1542,7 @@ Transform:
   - {fileID: 2077989929}
   - {fileID: 1658604466}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190564969
 GameObject:
@@ -1735,6 +1787,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1658604463}
     - target: {fileID: -6592890146748550664, guid: 5101cd0c1074f46f997db474de95356c, type: 3}
+      propertyPath: BulletType
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: -6592890146748550664, guid: 5101cd0c1074f46f997db474de95356c, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 5215765429319812803, guid: fd6f2d51d1cf749a9b20f382d66139c7, type: 3}
@@ -1744,11 +1800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1818077496541324157, guid: 5101cd0c1074f46f997db474de95356c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1818077496541324157, guid: 5101cd0c1074f46f997db474de95356c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.16661665
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1818077496541324157, guid: 5101cd0c1074f46f997db474de95356c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1992,6 +2048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3520997043601270621, guid: 1181adae1bca80e4b8f01e2f848e85a7, type: 3}
   shooter: {fileID: 2077989926}
+  playerController: {fileID: 0}
+  BulletType: Bullet
 --- !u!4 &2077989929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8219636593067429724, guid: d868812153a595740b1eacd71f2b441a, type: 3}
