@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     public float jumpForce = 4f;
     private bool isJumping = false;
-
+    
+    // Doble salto
+    private bool canDoubleJump = false;
+    public float doubleJumpForce = 3f;
     // Variables de salud y daño
     public int maxHealth = 100;
     public int currentHealth;
@@ -69,9 +72,18 @@ public class PlayerController : MonoBehaviour
         // Lógica de movimiento
         Move();
         
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            if (!isJumping)
+            {
+                Jump();
+                canDoubleJump = true;
+            }
+            else if (canDoubleJump)
+            {
+                DoubleJump();
+                canDoubleJump = false;
+            }
         }
     }
 
@@ -140,6 +152,13 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         animator.SetBool("sky", isJumping);
 
+    }   
+    
+    private void DoubleJump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
+        animator.SetBool("sky", true);
     }
 
     private void OnCollisionEnter2D(Collision2D other){
