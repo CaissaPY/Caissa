@@ -3,17 +3,17 @@ using UnityEngine;
 public class Feather : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] public float fallSpeed = 2f;
+    [SerializeField] public float fallSpeed = 0.5f;
     public float balanceSpeed = 1f;
 
     [Tooltip("Distancia del piso y la pluma")]
-    public float groundDistance = 0.05f;
+    public float groundDistance = 1f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private float balanceAngle = 0f;
-    public bool isFalling = false;
+    private bool isFalling = false;
 
     private void Awake()
     {
@@ -27,41 +27,26 @@ public class Feather : MonoBehaviour
 
     private void Update()
     {
-        CheckGround();
-
         // Aplicar la caída lenta y Balance tipo viento
-        if (isFalling){
-            
+        if (isFalling)
+        {
             rb.gravityScale = 1f;
-            Debug.Log("Fall");
             Fall();
             Balance();
-
-            // Verificar si se ha alcanzado el suelo
-            if (isGrounded)
-            {
-                isFalling = false; 
-                ResetRotation();
-                rb.gravityScale = 0f;  
-
-                Debug.Log("balance");
-            }
         }
     }
-    
+
     // Aplica la caída lenta de la pluma.
     private void Fall()
     {
         float fallSpeedModified = fallSpeed * Time.deltaTime;
         rb.velocity = new Vector2(0f, -fallSpeedModified);
-
-    }  
-    
-    private void ResetRotation()
-    {
-        transform.rotation = Quaternion.identity;
     }
 
+    private void ResetRotation()
+    {
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+    }
 
     // Aplica el balanceo de la pluma mientras cae.
     private void Balance()
@@ -69,14 +54,20 @@ public class Feather : MonoBehaviour
         // Aplicar el balanceo
         balanceAngle += balanceSpeed * Time.deltaTime;
         float sinValue = Mathf.Sin(balanceAngle);
-        transform.rotation = Quaternion.Euler(0f, 0f, sinValue * 45f);
-        
+        float rotationAngle = sinValue * 45f;
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * balanceSpeed);
     }
 
-    // Verifica si la pluma ha alcanzado el suelo.
-    private void CheckGround()
+    // Verifica si la pluma ha alcanzado el suelo utilizando OnCollisionEnter2D.
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayer);
-        isGrounded = hit.collider != null;
+        if (collision.gameObject.layer == groundLayer)
+        {
+            isFalling = false;
+            rb.gravityScale = 0f;
+            ResetRotation();
+            Debug.Log("data");
+        }
     }
 }
