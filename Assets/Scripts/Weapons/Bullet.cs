@@ -14,6 +14,9 @@ public class Bullet : MonoBehaviour
 	private Color _initialColor;
 	private float _startingTime;
 
+    [SerializeField] 
+    private int attackDamage = 20;
+	
 	void Awake()
 	{
 		_renderer = GetComponent<SpriteRenderer>();
@@ -41,5 +44,17 @@ public class Bullet : MonoBehaviour
 		float _percentageCompleted = _timeSinceStarted / livingTime;
 
 		_renderer.color = Color.Lerp(_initialColor, explosionColor, _percentageCompleted);
+	}
+
+    private void OnTriggerEnter2D(Collider2D other){
+
+		if(other.CompareTag("Enemy")){
+        	IDestructible obj = other.GetComponent<IDestructible>();
+             if (obj != null){
+				obj.TakeDamage(attackDamage);
+			}
+			// other.GetComponent<ObjectDestructionCar>().TakeDamage(attackDamage);
+		}
+
 	}
 }

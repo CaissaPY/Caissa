@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7287148422123269272}
   - component: {fileID: 6805080157886325701}
   - component: {fileID: 2516065052699298040}
+  - component: {fileID: 5329920650999232893}
   m_Layer: 0
   m_Name: SmallBullet
   m_TagString: Untagged
@@ -101,3 +102,20 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   livingTime: 2
   explosionColor: {r: 1, g: 0, b: 0, a: 1}
+  attackDamage: 20
+--- !u!58 &5329920650999232893
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520997043601270621}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.025
