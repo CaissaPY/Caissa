@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool right;
+    private bool left;
+    private bool up;
+    private bool down;
+    private bool space;
+
     private float MeleeAttack;
     private float DistanceAttack;
 
     // Variables de movimiento
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
+    public float AlturaSalto;
+    private bool isJumping = false;
 
     // Variables de salud y daño
     public int maxHealth = 100;
@@ -26,31 +34,12 @@ public class PlayerController : MonoBehaviour
 
     // Variables de animación
     private Animator animator;
+    private Rigidbody2D rb;
 
     // Variables de sonido
     public AudioClip jumpSound;
     public AudioClip attackSound;
     private AudioSource audioSource;
-
-    ///////////////////////////////////////////////////////////////
-
-    public float AlturaSalto;
-    public float Gravedad;
-    private int Fase1;
-    private int Fase2;
-    public bool Saltando;
-    public float Fallen;
-    private float YPos;
-    private float sky_;
-    public int LimiteDeVelocidadPorCaida = -10;
-    ////////////////////////DETECTOR DE PISO//////////////////////////
-
-
-    private RaycastHit2D hit;
-    public Vector3 v3;
-    public float distance;
-    public LayerMask layer;
-
 
     ///////////////////////////////////////////////////////////////
 
@@ -62,175 +51,124 @@ public class PlayerController : MonoBehaviour
 
         // Obtener referencias a los componentes necesarios
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-    }
-
-    private void OnDrawGizmos(){
-        Gizmos.DrawRay(transform.position + v3, Vector3.up * -1 * distance);
-    }
-    private bool CheckCollision {
-        get
-        {
-            hit = Physics2D.Raycast(transform.position + v3, Vector3.up * -1, distance, layer);
-            return hit.collider != null;
-        }
-    }
-    private void DetectorPlataforma(){
-        if(CheckCollision)
-        {
-            animator.SetBool("sky", false);
-            sky_ =0;
-            if(!Saltando){
-                Gravedad = 0;
-                Fase1 = 0;
-                Fase2 = 0;
-            }
-        }else{
-            animator.SetBool("sky", true);
-            if(!Saltando){
-                switch(Fase2){
-                    case 0: 
-                        Gravedad = 0;
-                        Fase2 = 1;
-                        break;
-                    case 1:
-                        if(Gravedad > LimiteDeVelocidadPorCaida){
-                            Gravedad -= AlturaSalto / Fallen * Time.deltaTime;
-                        }
-                        break;
-                }
-            }
-        }
-
-        if(transform.position.y > YPos){
-            animator.SetFloat("gravedad", 1);
-        }
-        if(transform.position.y < YPos){
-            animator.SetFloat("gravedad", 0);
-            switch(sky_){
-                case 0: 
-                    animator.Play("Base Layer.Sky", 0, 0);
-                    sky_++;
-                    break;
-            }
-        }
-        YPos = transform.position.y;
     }
 
     private void Start()
     {
-        currentHealth = maxHealth;
 
-        // Obtener referencias a los componentes necesarios
-        animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
-
-    void FixedUpdate()
-    {
-        Move();
-        Jump();
-    }  
 
     void Update()
     {
         // Lógica de movimiento y acciones del personaje
-        // ...
-        DetectorPlataforma();
-        transform.Translate(Vector3.up * Gravedad * Time.deltaTime);
-        // Move();
+        
+        // Teclas de direccion
+        getMoveInput(); 
+        // Lógica de movimiento
+        Move();
+        
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            Jump();
+        }
+    }
 
-        // if (Input.GetButtonDown("Jump") && isGrounded)
-        // {
-            // Jump();
-        // }
+    public void getMoveInput(){
+        right = Input.GetKey(KeyCode.RightArrow);
+        left = Input.GetKey(KeyCode.LeftArrow); 
+        up = Input.GetKey(KeyCode.UpArrow);
+        down = Input.GetKey(KeyCode.DownArrow);
 
-        // if (Input.GetKeyDown("Attack"))
-        // {
-        //     Attack();
-
-        // }
+        space = Input.GetKeyDown(KeyCode.Space);
     }
 
     public void Move()
     {
         // Lógica de movimiento común para todos los personajes
-        if(Input.GetKey(KeyCode.RightArrow)){
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        bool isMoving = right || left;
 
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            animator.SetBool("run", true);
+        if(isMoving){
+            float moveDirection = left ? -1f : 1f;
+            MoveHorizontally(moveDirection);
+            UpdateAnimator(true);
         }else{
-            animator.SetBool("run", false);
+            UpdateAnimator(false);
         }
 
-        if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-            animator.SetBool("run", true);
-        }
     }
 
-    public void TakeDamage(int damageAmount)
+    private void MoveHorizontally(float direction)
     {
-        currentHealth -= damageAmount;
+        // Lógica de movimiento común para todos los personajes
+        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        RotateCharacter(direction);
+    }
 
-        // Lógica adicional cuando el personaje recibe daño
-        // ...
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }  
+    private void RotateCharacter(float direction)
+    {
+        transform.rotation = Quaternion.Euler(0, direction > 0 ? 0 : 180, 0);
+
+    }
+
+    private void UpdateAnimator(bool isRunning)
+    {
+        animator.SetBool("run", isRunning);
+    }
+
+
+
+
+
+    // public void TakeDamage(int damageAmount)
+    // {
+    //     currentHealth -= damageAmount;
+
+    //     // Lógica adicional cuando el personaje recibe daño
+    //     // ...
+    //     if (currentHealth <= 0)
+    //     {
+    //         Die();
+    //     }
+    // }  
 
     private void Jump()
     {
         // Lógica de saltar del personaje
-        if(Input.GetKey(KeyCode.X)){
-            switch(Fase1){
-                case 0: 
-                    if (CheckCollision){
-                        Gravedad = AlturaSalto;
-                        Fase1 = 1;
-                        Saltando = true;
-                    }
-                    break;
-                case 1:
-                    if (Gravedad > 0){
-                        Gravedad -= jumpForce * Time.deltaTime;
-                    }else{
-                        Fase1 = 2;
-                    }
-                    Saltando = true;
-                    break;
-                case 2:
-                    Saltando = false;
-                    break;
-            }
-        }else{
-            Saltando = false;
+        isJumping = true;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        animator.SetBool("sky", isJumping);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other){
+
+         if (other.gameObject.layer == LayerMask.NameToLayer("piso")){
+            isJumping = false;
+            animator.SetBool("sky", isJumping);
         }
 
     }
 
-    private void Die()
-    {
-        // Lógica de muerte del personaje
-        // ...
-    }
+    // private void Die()
+    // {
+    //     // Lógica de muerte del personaje
+    //     // ...
+    // }
 
-    private void Attack()
-    {
-        if (Time.time >= nextAttackTime)
-        {
-            // Lógica de ataque
-            // ...
-            // PlayAttackSound();
+    // private void Attack()
+    // {
+    //     if (Time.time >= nextAttackTime)
+    //     {
+    //         // Lógica de ataque
+    //         // ...
+    //         // PlayAttackSound();
 
-            // Actualizar el tiempo para el próximo ataque
-            nextAttackTime = Time.time + 1f / attackRate;
-        }
-    }
+    //         // Actualizar el tiempo para el próximo ataque
+    //         nextAttackTime = Time.time + 1f / attackRate;
+    //     }
+    // }
 
     // private void PlayJumpSound()
     // {
