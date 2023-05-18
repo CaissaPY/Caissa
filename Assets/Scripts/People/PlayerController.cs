@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     // Variables de movimiento
     public float moveSpeed = 5f;
-    public float jumpForce = 5f;
-    public float AlturaSalto;
+    [SerializeField] 
+    public float jumpForce = 4f;
     private bool isJumping = false;
 
     // Variables de salud y daño
