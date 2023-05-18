@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     // Doble salto
     private bool canDoubleJump = false;
     public float doubleJumpForce = 3f;
+
+
     // Variables de salud y daño
     public int maxHealth = 100;
     public int currentHealth;
@@ -156,9 +158,14 @@ public class PlayerController : MonoBehaviour
     
     private void DoubleJump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
-        rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
-        animator.SetBool("sky", true);
+    // Reiniciar la velocidad vertical
+    rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+    // Aplicar la fuerza del doble salto
+    rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
+
+
+    animator.SetBool("sky", true);
     }
 
     private void OnCollisionEnter2D(Collision2D other){
