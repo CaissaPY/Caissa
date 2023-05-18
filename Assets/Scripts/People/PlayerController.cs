@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 {
     private bool right;
     private bool left;
@@ -30,9 +30,16 @@ public class PlayerController : MonoBehaviour
     private float defense;
 
     // Variables de combate
-    public int attackDamage = 10;
-    public float attackRate = 1f;
-    private float nextAttackTime = 0f;
+    [SerializeField] 
+    private float nextAttackTime;
+    [SerializeField] 
+    private float Cooldown = 1f;
+    [SerializeField] 
+    private Transform HitController;
+    [SerializeField] 
+    private float attackRate = 1f;
+    [SerializeField] 
+    private int attackDamage = 10;
 
     // Variables de control
     // private bool isGrounded = false;
@@ -87,6 +94,16 @@ public class PlayerController : MonoBehaviour
                 canDoubleJump = false;
             }
         }
+
+        if (nextAttackTime > 0)
+        {
+            nextAttackTime -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Attack();
+        }
     }
 
     public void getMoveInput(){
@@ -131,23 +148,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("run", isRunning);
     }
 
-
-
-
-
-    // public void TakeDamage(int damageAmount)
-    // {
-    //     currentHealth -= damageAmount;
-
-    //     // Lógica adicional cuando el personaje recibe daño
-    //     // ...
-    //     if (currentHealth <= 0)
-    //     {
-    //         Die();
-    //     }
-    // }  
-
-    private void Jump()
+    public void Jump()
     {
         // Lógica de saltar del personaje
         isJumping = true;
@@ -177,24 +178,65 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // private void Die()
-    // {
-    //     // Lógica de muerte del personaje
-    //     // ...
-    // }
+    public void Attack()
+    {
+        if (nextAttackTime <= 0)
+        {
+            // Lógica de ataque
+            Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);
+            
+            foreach(Collider2D collider in objects){
 
-    // private void Attack()
-    // {
-    //     if (Time.time >= nextAttackTime)
-    //     {
-    //         // Lógica de ataque
-    //         // ...
-    //         // PlayAttackSound();
+                if(collider.CompareTag("Enemy")){
 
-    //         // Actualizar el tiempo para el próximo ataque
-    //         nextAttackTime = Time.time + 1f / attackRate;
-    //     }
-    // }
+                    IDestructible obj = collider.GetComponent<IDestructible>();
+
+                    if (obj != null){
+                        obj.TakeDamage(attackDamage);
+                        Debug.Log("atacado");
+                    }
+
+                }
+            }
+            // PlayAttackSound();
+
+            // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
+            // nextAttackTime = Time.time + 1f / attackRate;
+
+            nextAttackTime = Cooldown;
+        }
+    }
+
+    private void OnDrawGizmos(){
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(HitController.position, attackRate);
+    }
+
+
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        // Lógica adicional cuando el personaje recibe daño
+        // ...
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }  
+    
+    public void Die()
+    {
+        // Lógica de muerte del personaje
+        Destroy(gameObject);
+    }
+
+    public void ActivateInvisibility()
+    {
+        // Lógica de ActivateInvisibility del personaje
+        // ...
+    }
+
 
     // private void PlayJumpSound()
     // {
