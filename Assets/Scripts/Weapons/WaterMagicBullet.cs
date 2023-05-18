@@ -13,6 +13,9 @@ public class WaterMagicBullet : MonoBehaviour
 	private Color _initialColor;
 	private float _startingTime;
 
+    [SerializeField] 
+    private int attackDamage = 20;
+
 	void Awake()
 	{
 		_renderer = GetComponent<SpriteRenderer>();
@@ -34,6 +37,47 @@ public class WaterMagicBullet : MonoBehaviour
 		// Move the object
 		Vector2 movement = direction.normalized * speed * Time.deltaTime;
 		transform.Translate(movement);
+
+	}
+
+    public void Attack()
+    {
+        // if (nextAttackTime <= 0)
+        // {
+        //     // Lógica de ataque
+        //     Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);
+            
+        //     foreach(Collider2D collider in objects){
+
+        //         if(collider.CompareTag("Enemy")){
+
+        //             IDestructible obj = collider.GetComponent<IDestructible>();
+
+        //             if (obj != null){
+        //                 obj.TakeDamage(attackDamage);
+        //                 Debug.Log("atacado");
+        //             }
+
+        //         }
+        //     }
+        //     // PlayAttackSound();
+
+        //     // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
+        //     // nextAttackTime = Time.time + 1f / attackRate;
+
+        //     nextAttackTime = Cooldown;
+        // }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+
+		if(other.CompareTag("Enemy")){
+        	IDestructible obj = other.GetComponent<IDestructible>();
+             if (obj != null){
+				obj.TakeDamage(attackDamage);
+			}
+			// other.GetComponent<ObjectDestructionCar>().TakeDamage(attackDamage);
+		}
 
 	}
 }
