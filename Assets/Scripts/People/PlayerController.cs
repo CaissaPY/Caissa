@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     
     // Doble salto
     private bool canDoubleJump = false;
-    public float doubleJumpForce = 3f;
+    public float doubleJumpForce = 4f;
 
 
     // Variables de salud y daño
