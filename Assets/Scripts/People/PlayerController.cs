@@ -175,6 +175,14 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             isJumping = false;
             animator.SetBool("sky", isJumping);
         }
+        // MODIFICACION
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            
+            TakeDamage(20);
+            Debug.Log("Daño Recibido: "+currentHealth);
+        }
+
 
     }
 
@@ -236,6 +244,8 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // Lógica de ActivateInvisibility del personaje
         // ...
     }
+
+
 
 
     // private void PlayJumpSound()
