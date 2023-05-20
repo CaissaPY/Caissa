@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public AudioClip attackSound;
     private AudioSource audioSource;
 
+    private Inventory inventory;
+
     ///////////////////////////////////////////////////////////////
 
 
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     private void Start()
     {
+        inventory = new Inventory(); // Inicializar el inventario
 
     }
 
@@ -176,6 +179,14 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             animator.SetBool("sky", isJumping);
         }
 
+        if (other.gameObject.CompareTag("SkyMineral"))
+        {
+            Debug.Log("Piedra recolectada");
+            inventory.AddStone(gameObject); // Agregar la piedra actual al inventario
+            Destroy(other.gameObject); // Destruir el objeto de piedra recolectada
+            
+            Debug.Log(inventory.GetStoneCount()); // Agregar la piedra actual al inventario
+        }
     }
 
     public void Attack()
@@ -257,12 +268,5 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     //     }
     // }
 
-    // private void OnCollisionExit(Collision collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = false;
-    //     }
-    // }
 
 }
