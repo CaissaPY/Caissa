@@ -494,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313304104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000023841858, y: 0.000000059604645, z: 0}
+  m_LocalPosition: {x: 0, y: 0.000000059604645, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -877,12 +877,15 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   nextAttackTime: 1
-  Cooldown: 1
+  CooldownNextAttack: 1
   HitController: {fileID: 79575131}
   attackRate: 0.1
   attackDamage: 10
   jumpSound: {fileID: 0}
   attackSound: {fileID: 0}
+  transparencyValue: 0.5
+  nextInvisibleTime: 0
+  CooldownNextInvisible: 1
 --- !u!61 &448582141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1147,7 +1150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19495821, y: 0.25677472, z: -10}
+  m_LocalPosition: {x: -1.3012855, y: 0.25677472, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1313,7 +1316,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1775183595, guid: c92961c9f17a0ab4cb6bb602727276a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.46884412, g: 0.29383236, b: 0.8773585, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2437,7 +2440,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1775183595, guid: c92961c9f17a0ab4cb6bb602727276a1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.46884412, g: 0.29383236, b: 0.8773585, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
