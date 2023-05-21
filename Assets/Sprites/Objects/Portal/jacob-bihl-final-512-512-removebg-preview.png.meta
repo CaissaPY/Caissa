@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: 1950251917a33ed4aa512f2ce874e1ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 519
+        width: 79
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aedea0cddf686642872778cfbedf7cb
+      internalID: 1921688410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 518
+        width: 80
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc36dd650d197c43bb458c4969018a9
+      internalID: -453193152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 519
+        width: 79
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d28a091104fbab4cb509b9a4e434538
+      internalID: 832953972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 520
+        width: 79
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4843e6f1ccf8a84fb12dca3a05ef8fa
+      internalID: 1687519086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 418
+        width: 79
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d0691676ba6b946989297470916253
+      internalID: -1269582850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 457
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59ecf090dbe8a640900932f19acf0e8
+      internalID: -1421713197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 418
+        width: 79
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c5683590790564c9e2810ab84aa726
+      internalID: -1056006110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 418
+        width: 79
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b233ffd1852520040804bffae3281537
+      internalID: 965005233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 419
+        width: 79
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da11603f8acd2e547aac8701d4a47f74
+      internalID: 497371023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 315
+        width: 80
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9292e6ab378ad42af67d4825e79666
+      internalID: -869239891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 315
+        width: 80
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db16c42befb0d9b45b36587eded1b9fc
+      internalID: -119596581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 315
+        width: 79
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdd01999ea822b4bb60dd94549f5044
+      internalID: -1456847203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 315
+        width: 79
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f40b0aac605c4f4ba4948f6ef67a6c4
+      internalID: -334756416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 213
+        width: 78
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80beb010059b0041b42cc523307c292
+      internalID: -1107422352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 210
+        width: 79
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08a6f8accfddbd47871e397a1b1d3ce
+      internalID: -1317658252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 213
+        width: 79
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59b64357286f9e499ea00d33ceca71b
+      internalID: 937782224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 214
+        width: 79
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30a35aa143de7a4ea7e20aba77306af
+      internalID: 1147197678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 111
+        width: 81
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08473302eade66d4c9d955f22868b466
+      internalID: 1397566144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jacob-bihl-final-512-512-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 110
+        width: 79
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b07a3e96dae0b4fae4363f61cddda0
+      internalID: -667100375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      jacob-bihl-final-512-512-removebg-preview_0: 1921688410
+      jacob-bihl-final-512-512-removebg-preview_1: -453193152
+      jacob-bihl-final-512-512-removebg-preview_10: -119596581
+      jacob-bihl-final-512-512-removebg-preview_11: -1456847203
+      jacob-bihl-final-512-512-removebg-preview_12: -334756416
+      jacob-bihl-final-512-512-removebg-preview_13: -1107422352
+      jacob-bihl-final-512-512-removebg-preview_14: -1317658252
+      jacob-bihl-final-512-512-removebg-preview_15: 937782224
+      jacob-bihl-final-512-512-removebg-preview_16: 1147197678
+      jacob-bihl-final-512-512-removebg-preview_17: 1397566144
+      jacob-bihl-final-512-512-removebg-preview_18: -667100375
+      jacob-bihl-final-512-512-removebg-preview_2: 832953972
+      jacob-bihl-final-512-512-removebg-preview_3: 1687519086
+      jacob-bihl-final-512-512-removebg-preview_4: -1269582850
+      jacob-bihl-final-512-512-removebg-preview_5: -1421713197
+      jacob-bihl-final-512-512-removebg-preview_6: -1056006110
+      jacob-bihl-final-512-512-removebg-preview_7: 965005233
+      jacob-bihl-final-512-512-removebg-preview_8: 497371023
+      jacob-bihl-final-512-512-removebg-preview_9: -869239891
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

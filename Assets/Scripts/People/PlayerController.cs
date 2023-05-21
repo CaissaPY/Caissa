@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             Debug.Log(inventory.GetStoneCount()); // Agregar la piedra actual al inventario
         }
     }
-
+    
     public void Attack()
     {
         if (nextAttackTime <= 0)
