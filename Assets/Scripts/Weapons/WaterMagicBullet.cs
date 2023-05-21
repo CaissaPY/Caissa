@@ -14,7 +14,7 @@ public class WaterMagicBullet : MonoBehaviour
 	private float _startingTime;
 
     [SerializeField] 
-    private int attackDamage = 20;
+    private int attackDamage = 10;
 
 	void Awake()
 	{

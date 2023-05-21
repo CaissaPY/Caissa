@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 {
+    // Variables de movimiento
     private bool right;
     private bool left;
     private bool up;
     private bool down;
     private bool space;
 
-    private float MeleeAttack;
-    private float DistanceAttack;
-
     // Variables de movimiento
     public float moveSpeed = 5f;
+    
+    // Salto y Doble salto
     [SerializeField] 
     public float jumpForce = 4f;
     private bool isJumping = false;
-    
-    // Doble salto
+
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
 
@@ -33,7 +32,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField] 
     private float nextAttackTime;
     [SerializeField] 
-    private float Cooldown = 1f;
+    private float CooldownNextAttack = 1f;
     [SerializeField] 
     private Transform HitController;
     [SerializeField] 
@@ -53,6 +52,21 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public AudioClip attackSound;
     private AudioSource audioSource;
 
+    //----------------------------------
+    // Variable de inventario
+    //----------------------------------
+    private Inventory inventory;
+
+    //----------------------------------
+    // Variables para ocultar al jugador
+    //----------------------------------
+    public float transparencyValue = 0.5f; // Valor de transparencia cuando se presiona el botón hacia abajo
+    private bool isHidden = false; // Indica si el jugador está oculto
+    private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer
+    [SerializeField] 
+    private float nextInvisibleTime;
+    [SerializeField] 
+    private float CooldownNextInvisible = 1f;
     ///////////////////////////////////////////////////////////////
 
 
@@ -69,18 +83,26 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     private void Start()
     {
-
+        inventory = new Inventory(); // Inicializar el inventario
+        spriteRenderer = GetComponent<SpriteRenderer>();
+   
     }
 
     void Update()
     {
         // Lógica de movimiento y acciones del personaje
         
+        //----------------------------------
         // Teclas de direccion
+        //----------------------------------
         getMoveInput(); 
-        // Lógica de movimiento
+        //----------------------------------
+        // El Player se mueva
+        //----------------------------------
         Move();
-        
+        //----------------------------------
+        // El Player Salte y doble salto
+        //----------------------------------
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!isJumping)
@@ -95,6 +117,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             }
         }
 
+        //----------------------------------
+        //El Player ataque con un tiempo de recarga
+        //----------------------------------
         if (nextAttackTime > 0)
         {
             nextAttackTime -= Time.deltaTime;
@@ -104,6 +129,21 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         {
             Attack();
         }
+
+        //----------------------------------
+        // Ocultar al jugador
+        //----------------------------------
+        if (nextInvisibleTime > 0)
+        {
+            nextInvisibleTime -= Time.deltaTime;
+        }
+
+        if (down)
+        {
+            ActivateInvisibility();
+        }
+
+
     }
 
     public void getMoveInput(){
@@ -184,8 +224,16 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         }
 
 
+        if (other.gameObject.CompareTag("SkyMineral"))
+        {
+            Debug.Log("Piedra recolectada");
+            inventory.AddStone(gameObject); // Agregar la piedra actual al inventario
+            Destroy(other.gameObject); // Destruir el objeto de piedra recolectada
+            
+            Debug.Log(inventory.GetStoneCount()); // Agregar la piedra actual al inventario
+        }
     }
-
+    
     public void Attack()
     {
         if (nextAttackTime <= 0)
@@ -211,7 +259,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
             // nextAttackTime = Time.time + 1f / attackRate;
 
-            nextAttackTime = Cooldown;
+            nextAttackTime = CooldownNextAttack;
         }
     }
 
@@ -242,7 +290,29 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public void ActivateInvisibility()
     {
         // Lógica de ActivateInvisibility del personaje
-        // ...
+        
+        if (nextInvisibleTime <= 0)
+        {
+            // Lógica de ataque
+            isHidden = !isHidden;
+
+            if (isHidden)
+            {
+                // Cambiar el color del SpriteRenderer para hacer al jugador transparente
+                Color newColor = spriteRenderer.color;
+                newColor.a = transparencyValue;
+                spriteRenderer.color = newColor;
+            }
+            else
+            {
+                // Restaurar la opacidad normal del jugador
+                Color newColor = spriteRenderer.color;
+                newColor.a = 1f;
+                spriteRenderer.color = newColor;
+            }
+
+            nextInvisibleTime = CooldownNextInvisible;
+        }
     }
 
 
@@ -267,12 +337,5 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     //     }
     // }
 
-    // private void OnCollisionExit(Collision collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = false;
-    //     }
-    // }
 
 }

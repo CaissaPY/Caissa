@@ -6,7 +6,7 @@ public class ObjectDestructionCar : MonoBehaviour, IDestructible
 {
 
     [SerializeField]
-    private int maxHealth = 30;
+    private int maxHealth = 50;
     [SerializeField]
     private int currentHealth;
 

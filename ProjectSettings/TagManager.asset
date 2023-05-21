@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SpawnPoint
   - Enemy
+  - SkyMineral
+  - Portal1
+  - Portal2
   layers:
   - Default
   - TransparentFX
