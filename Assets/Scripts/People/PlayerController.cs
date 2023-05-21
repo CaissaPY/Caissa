@@ -215,6 +215,14 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             isJumping = false;
             animator.SetBool("sky", isJumping);
         }
+        // MODIFICACION
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            
+            TakeDamage(20);
+            Debug.Log("Daño Recibido: "+currentHealth);
+        }
+
 
         if (other.gameObject.CompareTag("SkyMineral"))
         {
@@ -306,6 +314,8 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextInvisibleTime = CooldownNextInvisible;
         }
     }
+
+
 
 
     // private void PlayJumpSound()
