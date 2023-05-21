@@ -210,27 +210,21 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     }
 
     private void OnCollisionEnter2D(Collision2D other){
-
+        
+        // identificar un Objeto piso con el Layer piso
          if (other.gameObject.layer == LayerMask.NameToLayer("piso")){
             isJumping = false;
             animator.SetBool("sky", isJumping);
         }
-        // MODIFICACION
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            
-            TakeDamage(20);
-            Debug.Log("Daño Recibido: "+currentHealth);
-        }
 
-
+        // Agregar items al inventario
         if (other.gameObject.CompareTag("SkyMineral"))
         {
-            Debug.Log("Piedra recolectada");
-            inventory.AddStone(gameObject); // Agregar la piedra actual al inventario
-            Destroy(other.gameObject); // Destruir el objeto de piedra recolectada
+            Debug.Log("Mineral recolectada");
+            inventory.AddStone(gameObject); // Agregar la Mineral actual al inventario
+            Destroy(other.gameObject); // Destruir el objeto de Mineral recolectada
             
-            Debug.Log(inventory.GetStoneCount()); // Agregar la piedra actual al inventario
+            Debug.Log(inventory.GetStoneCount()); // Agregar la Mineral actual al inventario
         }
     }
     
