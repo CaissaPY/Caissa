@@ -75,9 +75,14 @@ public class WaterMagicBullet : MonoBehaviour
         	IDestructible obj = other.GetComponent<IDestructible>();
              if (obj != null){
 				obj.TakeDamage(attackDamage);
+                Die();
 			}
 			// other.GetComponent<ObjectDestructionCar>().TakeDamage(attackDamage);
 		}
 
 	}
+
+    private void Die(){
+        Destroy(gameObject);
+    }
 }

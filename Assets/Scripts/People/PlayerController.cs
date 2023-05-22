@@ -52,10 +52,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public AudioClip attackSound;
     private AudioSource audioSource;
 
+
     //----------------------------------
     // Variable de inventario
     //----------------------------------
     private Inventory inventory;
+    // Recolectar mineral
+
 
     //----------------------------------
     // Variables para ocultar al jugador
@@ -79,13 +82,28 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+
+        // // Buscar todos los objetos con el componente AudioListener en la escena
+        // AudioListener[] audioListeners = FindObjectsOfType<AudioListener>();
+        // // Si se encuentran más de un AudioListener
+        // if (audioListeners.Length > 1)
+        // {
+        //     // Desactivar todos los AudioListeners excepto el primero
+        //     for (int i = 1; i < audioListeners.Length; i++)
+        //     {
+        //         audioListeners[i].enabled = false;
+                
+        //           Debug.Log("Nombre del objeto: " + audioListeners[i].gameObject.name);
+        //     }
+
+        //     Debug.LogWarning("Se encontraron múltiples AudioListeners en la escena. Se desactivaron los extras.");
+        // }
     }
 
     private void Start()
     {
         inventory = new Inventory(); // Inicializar el inventario
         spriteRenderer = GetComponent<SpriteRenderer>();
-   
     }
 
     void Update()
@@ -222,8 +240,14 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         {
             Debug.Log("Mineral recolectada");
             inventory.AddStone(gameObject); // Agregar la Mineral actual al inventario
-            Destroy(other.gameObject); // Destruir el objeto de Mineral recolectada
+
+            // Reproduce el sonido de recolección
+            // audioSource.Play();
             
+            /* Destruir el objeto de Mineral recolectada
+             Espera hasta que termine el sonido para destruirlo */
+            Destroy(other.gameObject); 
+
             Debug.Log(inventory.GetStoneCount()); // Agregar la Mineral actual al inventario
         }
     }
