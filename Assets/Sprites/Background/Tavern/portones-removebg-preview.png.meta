@@ -1,0 +1,1111 @@
+fileFormatVersion: 2
+guid: 27876c2370bfb7c4d9f562fb4ddf191d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: portones-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 10
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ade2f7fc73cf014fa0ab863eff5b211
+      internalID: 2011951571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 415
+        width: 6
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a3434ac82908e4290f9ff5137c1a3f
+      internalID: 256264050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 393
+        width: 6
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44a8cf39dbdf1146af43ce380b17a02
+      internalID: 1138876333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 392
+        width: 6
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6bccd9668188146b2ff0f49b83049a
+      internalID: 431987954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 395
+        width: 5
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2477b8464e646fe469e325e6a8919d78
+      internalID: 80303354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 383
+        width: 10
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f310016a5c319408a07360ab16e673
+      internalID: 1852310150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 385
+        width: 49
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2682d95f195bb4785b3acc6b420942
+      internalID: 38887165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 400
+        width: 7
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2d031a36088d44db9d7eef5959649b
+      internalID: -218588329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 402
+        width: 7
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d49e9ce02819d04181a4a60893cea21
+      internalID: 639583162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 382
+        width: 69
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d461eb64bfaf754ca660a713ecc6131
+      internalID: -2027321963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 381
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed205878380ce3479a9e415ed72964a
+      internalID: -339434024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 382
+        width: 31
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3208c4feedd1176409a34705bd103ef2
+      internalID: 244201866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 382
+        width: 20
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626b46caf0af08f4d8eaf53515180cad
+      internalID: -1220768335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 381
+        width: 15
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a0a7a23c5f44e4199141505f6cbd1c
+      internalID: -1949168330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 382
+        width: 17
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c3137f8ec251a4dbc7791f968e064e
+      internalID: 1049729198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 382
+        width: 19
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb2664fcd55a394ca339895f45303ca
+      internalID: 386896486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 382
+        width: 15
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505bb3e40dd20254397aeca0fcc1414b
+      internalID: 506611641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 402
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861e757067fbfc745916158cb9f31221
+      internalID: -1795351028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 392
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24da87889d669364898398ddab2c73c1
+      internalID: -1807662455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 291
+        width: 56
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1bcf82c24708c4aacaed64feae5dc7
+      internalID: 1180601502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 291
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3145d840fd344584c80be8a357fa1102
+      internalID: 865211201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 303
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8877cbd11f08ec429005d81b24c7e9d
+      internalID: 1525214334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 303
+        width: 51
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0afa2e653b36a49acbc486af56425d
+      internalID: -634779380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 303
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08753a44b0666f4a8eba5c1952d0219
+      internalID: -2062176472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 303
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e28a9ba06b11341bb8c71910671538
+      internalID: 24529075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 303
+        width: 17
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a104857546ee34c49b18b81bbefa01ef
+      internalID: -1517320912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 203
+        width: 86
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca0b2f938e72cc46875d66dcb8f3bfe
+      internalID: -325265825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 203
+        width: 54
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcca46b997f82b449514698009738a2
+      internalID: 385865599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 202
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628c9efea682bc641ac4bf5bdc875325
+      internalID: 434209372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 202
+        width: 46
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cec45c5cbfcf5479b6748565b5f619
+      internalID: 1278967393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 202
+        width: 55
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a6ba676fafc5449afe2461fe4a647b
+      internalID: -783366760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 202
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fba8a2ed5577c4080af448bd039b2c
+      internalID: 1817952457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 198
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edde8d46a5d2b544eba7f323504dcd84
+      internalID: -874952017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 89
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2fd5a62f7e6994bb976427288141a4
+      internalID: 1502705119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 104
+        width: 63
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0023fb81fc57244a9ea485588b63b2a
+      internalID: 794999429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 104
+        width: 71
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bc6cdd5e98ae545acf7c09ef15677f
+      internalID: -2051905655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 104
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505e8f20b38d4e549a10010fc1bd45b7
+      internalID: 1016654019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 103
+        width: 61
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8726507eb5b5c148af7e3f663538c72
+      internalID: 1923390951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 106
+        width: 42
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3792b0fbaa10e4e80311b9b87a1460
+      internalID: -619195145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 153
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fcdec7a65e16d488cb737f7367c8b7
+      internalID: 1785778949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 9
+        width: 72
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d038de35e7dde5342b7e30f682064ac1
+      internalID: -1384144595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 9
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f98dac183b3d140a9840b76f05c2ff
+      internalID: 1127994936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 8
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373a46889bebbd946a151ab220c9a732
+      internalID: -1704143374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portones-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 10
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cff62f5a1280874482324d201090932
+      internalID: -45949041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      portones-removebg-preview_0: -2028835801
+      portones-removebg-preview_1: 2011951571
+      portones-removebg-preview_10: 439300483
+      portones-removebg-preview_11: -2027321963
+      portones-removebg-preview_12: -339434024
+      portones-removebg-preview_13: 244201866
+      portones-removebg-preview_14: -1220768335
+      portones-removebg-preview_15: -1949168330
+      portones-removebg-preview_16: 1049729198
+      portones-removebg-preview_17: 386896486
+      portones-removebg-preview_18: 506611641
+      portones-removebg-preview_19: -1222262869
+      portones-removebg-preview_2: 256264050
+      portones-removebg-preview_20: -1795351028
+      portones-removebg-preview_21: -1807662455
+      portones-removebg-preview_22: 1001583755
+      portones-removebg-preview_23: 1180601502
+      portones-removebg-preview_24: 865211201
+      portones-removebg-preview_25: 1525214334
+      portones-removebg-preview_26: -634779380
+      portones-removebg-preview_27: -2062176472
+      portones-removebg-preview_28: 24529075
+      portones-removebg-preview_29: -1517320912
+      portones-removebg-preview_3: 1138876333
+      portones-removebg-preview_30: -325265825
+      portones-removebg-preview_31: 385865599
+      portones-removebg-preview_32: 434209372
+      portones-removebg-preview_33: 1278967393
+      portones-removebg-preview_34: -783366760
+      portones-removebg-preview_35: 1817952457
+      portones-removebg-preview_36: -1440580647
+      portones-removebg-preview_37: -874952017
+      portones-removebg-preview_38: 1502705119
+      portones-removebg-preview_39: 794999429
+      portones-removebg-preview_4: 431987954
+      portones-removebg-preview_40: -2051905655
+      portones-removebg-preview_41: 1016654019
+      portones-removebg-preview_42: 1923390951
+      portones-removebg-preview_43: -619195145
+      portones-removebg-preview_44: -1841951443
+      portones-removebg-preview_45: 1785778949
+      portones-removebg-preview_46: -87549729
+      portones-removebg-preview_47: -1384144595
+      portones-removebg-preview_48: 1127994936
+      portones-removebg-preview_49: -1704143374
+      portones-removebg-preview_5: 80303354
+      portones-removebg-preview_50: -45949041
+      portones-removebg-preview_51: -1107650485
+      portones-removebg-preview_6: 1852310150
+      portones-removebg-preview_7: 38887165
+      portones-removebg-preview_8: -218588329
+      portones-removebg-preview_9: 639583162
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

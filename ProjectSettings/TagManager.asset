@@ -9,6 +9,7 @@ TagManager:
   - SkyMineral
   - Portal1
   - Portal2
+  - Tavern
   layers:
   - Default
   - TransparentFX

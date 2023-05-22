@@ -9,7 +9,7 @@ public class Mob : MonoBehaviour, IDestructible
     public float ContadorZ;
     public float TdeEsperaZ = 4f;
     [SerializeField]
-    private int maxHealth = 30;
+    private int maxHealth = 50;
     [SerializeField]
     private int currentHealth;
 
