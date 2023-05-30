@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,7 +126,98 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bubble emotes july update_0: -1699626442
+      bubble emotes july update_1: -697921948
+      bubble emotes july update_10: -421510812
+      bubble emotes july update_11: -265387081
+      bubble emotes july update_12: 801838716
+      bubble emotes july update_13: 738622255
+      bubble emotes july update_14: -1387159012
+      bubble emotes july update_15: -525911731
+      bubble emotes july update_16: -221670851
+      bubble emotes july update_17: -2139675438
+      bubble emotes july update_18: 966337498
+      bubble emotes july update_19: -1699064199
+      bubble emotes july update_2: -1407888513
+      bubble emotes july update_20: -510367093
+      bubble emotes july update_21: -1786905160
+      bubble emotes july update_22: -641094112
+      bubble emotes july update_23: 1930315785
+      bubble emotes july update_24: -1195922332
+      bubble emotes july update_25: 558826317
+      bubble emotes july update_26: -1802805926
+      bubble emotes july update_27: -1111730325
+      bubble emotes july update_28: -1345697771
+      bubble emotes july update_29: -813138589
+      bubble emotes july update_3: 70725800
+      bubble emotes july update_30: 223125869
+      bubble emotes july update_31: 973361535
+      bubble emotes july update_32: 5893883
+      bubble emotes july update_33: 292174184
+      bubble emotes july update_34: 1905687344
+      bubble emotes july update_35: -1102254202
+      bubble emotes july update_36: -1250817148
+      bubble emotes july update_37: 1528619563
+      bubble emotes july update_38: 1412393293
+      bubble emotes july update_39: -1306442465
+      bubble emotes july update_4: 145091657
+      bubble emotes july update_40: -1217983847
+      bubble emotes july update_41: 712173314
+      bubble emotes july update_42: -1108218008
+      bubble emotes july update_43: 1806294991
+      bubble emotes july update_44: -1883414557
+      bubble emotes july update_45: -282927118
+      bubble emotes july update_46: -1561916297
+      bubble emotes july update_47: 1668634617
+      bubble emotes july update_48: -695300615
+      bubble emotes july update_49: -790135356
+      bubble emotes july update_5: 2090035662
+      bubble emotes july update_50: 52613780
+      bubble emotes july update_51: -69579526
+      bubble emotes july update_52: 428795336
+      bubble emotes july update_53: 1203934551
+      bubble emotes july update_54: 911724148
+      bubble emotes july update_55: -1057513030
+      bubble emotes july update_56: -2037212324
+      bubble emotes july update_57: -1591352881
+      bubble emotes july update_58: 1637335492
+      bubble emotes july update_59: 398374377
+      bubble emotes july update_6: -469036371
+      bubble emotes july update_60: 174522420
+      bubble emotes july update_61: 2057484507
+      bubble emotes july update_62: -607504053
+      bubble emotes july update_63: 1570968373
+      bubble emotes july update_64: -1446131772
+      bubble emotes july update_65: -1765774558
+      bubble emotes july update_66: 1603853273
+      bubble emotes july update_67: -1587826549
+      bubble emotes july update_68: -1675640815
+      bubble emotes july update_69: -375096129
+      bubble emotes july update_7: 1989568366
+      bubble emotes july update_70: 1975874223
+      bubble emotes july update_71: -1938905700
+      bubble emotes july update_72: 303248510
+      bubble emotes july update_73: -1182376308
+      bubble emotes july update_74: 832195021
+      bubble emotes july update_75: -813866864
+      bubble emotes july update_76: -1074444907
+      bubble emotes july update_77: -142562159
+      bubble emotes july update_78: 941889918
+      bubble emotes july update_79: 1367022525
+      bubble emotes july update_8: -1971370709
+      bubble emotes july update_80: 639269207
+      bubble emotes july update_81: 480988914
+      bubble emotes july update_82: 67536625
+      bubble emotes july update_83: -507639737
+      bubble emotes july update_84: 769475616
+      bubble emotes july update_85: 1511563963
+      bubble emotes july update_86: 1418549067
+      bubble emotes july update_87: -1883122035
+      bubble emotes july update_88: 1594407634
+      bubble emotes july update_89: -166393431
+      bubble emotes july update_9: 972679229
+      bubble emotes july update_90: 890850140
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

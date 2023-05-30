@@ -10,6 +10,7 @@ TagManager:
   - Portal1
   - Portal2
   - Tavern
+  - Minerals
   layers:
   - Default
   - TransparentFX
@@ -61,4 +62,7 @@ TagManager:
     locked: 0
   - name: FrontForeground
     uniqueID: 2772687333
+    locked: 0
+  - name: GUI
+    uniqueID: 549511347
     locked: 0

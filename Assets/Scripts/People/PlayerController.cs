@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 {
@@ -22,12 +23,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
 
-
-    // Variables de salud y daño
-    public int maxHealth = 100;
-    public int currentHealth;
-    private float defense;
-
     // Variables de combate
     [SerializeField] 
     private float nextAttackTime;
@@ -42,6 +37,18 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     // Variables de control
     // private bool isGrounded = false;
+
+    // Variables de salud y defensa
+    public Image heart;
+    public Image defense;
+    [SerializeField]
+    private float maxDefense = 50;
+    [SerializeField]
+    private float currentDefense;
+    [SerializeField]
+    private float maxHealth = 100;
+    [SerializeField]
+    private float currentHealth;
 
     // Variables de animación
     private Animator animator;
@@ -61,7 +68,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     // Variable de inventario
     //----------------------------------
     private Inventory inventory;
-    // Recolectar mineral
 
 
     //----------------------------------
@@ -80,6 +86,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     private void Awake()
     {
+
+        // Igualar al inicio la vida y defensa actual y la maxima vida y defensa
+        currentDefense = maxDefense;
         currentHealth = maxHealth;
 
         // Obtener referencias a los componentes necesarios
@@ -166,6 +175,11 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             ActivateInvisibility();
         }
 
+        //----------------------------------
+        // GUI de vida y defensa
+        //----------------------------------
+        heart.fillAmount = currentHealth / maxHealth; 
+        defense.fillAmount = currentDefense / maxDefense;    
 
     }
 
@@ -209,8 +223,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private void UpdateAnimator(bool isRunning)
     {
         animator.SetBool("run", isRunning);
-        
-
     }
 
     public void Jump()
@@ -224,14 +236,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     
     private void DoubleJump()
     {
-    // Reiniciar la velocidad vertical
-    rb.velocity = new Vector2(rb.velocity.x, 0f);
+        // Reiniciar la velocidad vertical
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
 
-    // Aplicar la fuerza del doble salto
-    rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
+        // Aplicar la fuerza del doble salto
+        rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
 
-
-    animator.SetBool("sky", true);
+        animator.SetBool("sky", true);
     }
 
     private void OnCollisionEnter2D(Collision2D other){
@@ -243,22 +254,22 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         }
 
         // Agregar items al inventario
-        if (other.gameObject.CompareTag("SkyMineral"))
-        {
-            Debug.Log("Mineral recolectada");
-            inventory.AddStone(gameObject); // Agregar la Mineral actual al inventario
+        // if (other.gameObject.CompareTag("SkyMineral"))
+        // {
+            // // Agregar la Mineral actual al inventario
+            // inventory.AddItem(other.gameObject); 
 
-            // Reproduce el sonido de recolección
-            // audioSource.Play();
+            // // Objetos en el inventario y SkyMineral
+            // Debug.Log($"total del inventario: {inventory.GetItemCount()}  "); 
+            // Debug.Log($"total de minerales: {inventory.GetFilteredItemCount("SkyMineral")} "); 
+            // Debug.Log($"items: {inventory.ShowItems()}   "); 
             
-            /* Destruir el objeto de Mineral recolectada
-             Espera hasta que termine el sonido para destruirlo */
-            Destroy(other.gameObject); 
-
-            Debug.Log(inventory.GetStoneCount()); // Agregar la Mineral actual al inventario
-        }
+            /* Destruir el objeto de Mineral recolectada */
+        //     Destroy(other.gameObject); 
+        // }
     }
     
+
     public void Attack()
     {
         if (nextAttackTime <= 0)
@@ -288,28 +299,33 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         }
     }
 
-    private void OnDrawGizmos(){
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(HitController.position, attackRate);
-    }
-
-
     public void TakeDamage(int damageAmount)
-    {
-        currentHealth -= damageAmount;
+    {   
+        if(currentDefense <= 0){
 
-        // Lógica adicional cuando el personaje recibe daño
-        // ...
-        if (currentHealth <= 0)
-        {
-            Die();
+            currentHealth -= damageAmount;
+
+            // Lógica adicional cuando el personaje recibe daño
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+
+        }else{
+            currentDefense -= damageAmount;
+
         }
-    }  
+    }
     
     public void Die()
     {
         // Lógica de muerte del personaje
-        Destroy(gameObject);
+        Debug.Log("Estas muerto");
+    }
+
+    private void OnDrawGizmos(){
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(HitController.position, attackRate);
     }
 
     public void ActivateInvisibility()
