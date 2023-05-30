@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 6039087375148159412}
   - component: {fileID: 6039087375148159307}
   - component: {fileID: 6039087375148159413}
-  - component: {fileID: 5096299722399849415}
   - component: {fileID: 440904657358178009}
-  - component: {fileID: 2926591974347112971}
+  - component: {fileID: -6926847624967661915}
   m_Layer: 0
   m_Name: crystalDark
-  m_TagString: SkyMineral
+  m_TagString: Minerals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,27 +108,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &5096299722399849415
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6039087375148159414}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &440904657358178009
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,13 +118,13 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0023442507, y: 0.004219711}
   m_Size: {x: 0.033408403, y: 0.14030802}
   m_Direction: 0
---- !u!114 &2926591974347112971
+--- !u!114 &-6926847624967661915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,12 +133,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6039087375148159414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa62ea3b36a90dd4eb214b9f8f235bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e6cd3b8393cb13488589103fe7f9520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 2
-  balanceSpeed: 2
-  groundDistance: 0.2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  mineralsPoint: 3
+  textMineralsPoint: {fileID: 0}

@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: 8edef5c97a66eee40abe49420490d022
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 361
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5619ff96001dbb448ba3e022ca7bbfb9
+      internalID: 460040253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 373
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae8d1d73c8414742922aef3062b6fda
+      internalID: 1392381686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 177
+        width: 35
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72d278920713974e9fd4cd13333fe71
+      internalID: -1368362306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 177
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4bc7a9d890fdc4aa72b6512aed7e1c
+      internalID: 1267078677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 177
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e767faa10d4ccde4bacb49ec381bc055
+      internalID: 573969298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 177
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d459406469c074589be8210c86413d
+      internalID: 85946032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 177
+        width: 38
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36a4665bd1c25b40aa96c90604bff9c
+      internalID: 627176034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 95
+        width: 44
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cabd39b03b5b2d4c80f9e42acabd5d4
+      internalID: -117711859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 94
+        width: 46
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ff1188d105abf4088ef2978e0ac08c
+      internalID: 1345011954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 95
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32647563fe00614397794e1da3539e6
+      internalID: 1927118234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animated_floor_spikes_game_asset-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 95
+        width: 45
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb86f9395b1d5a47ba3b1c98fb9f74a
+      internalID: 1693598458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Animated_floor_spikes_game_asset-removebg-preview_0: 1345011954
+      Animated_floor_spikes_game_asset-removebg-preview_1: 460040253
+      Animated_floor_spikes_game_asset-removebg-preview_10: 2077425622
+      Animated_floor_spikes_game_asset-removebg-preview_11: 604444638
+      Animated_floor_spikes_game_asset-removebg-preview_12: -292358753
+      Animated_floor_spikes_game_asset-removebg-preview_13: -1368362306
+      Animated_floor_spikes_game_asset-removebg-preview_14: 265070630
+      Animated_floor_spikes_game_asset-removebg-preview_15: 342758839
+      Animated_floor_spikes_game_asset-removebg-preview_16: -754297676
+      Animated_floor_spikes_game_asset-removebg-preview_17: 1267078677
+      Animated_floor_spikes_game_asset-removebg-preview_18: 573969298
+      Animated_floor_spikes_game_asset-removebg-preview_19: 85946032
+      Animated_floor_spikes_game_asset-removebg-preview_2: 1927118234
+      Animated_floor_spikes_game_asset-removebg-preview_20: 627176034
+      Animated_floor_spikes_game_asset-removebg-preview_21: -963574296
+      Animated_floor_spikes_game_asset-removebg-preview_22: -117711859
+      Animated_floor_spikes_game_asset-removebg-preview_23: -582049486
+      Animated_floor_spikes_game_asset-removebg-preview_24: -1901552835
+      Animated_floor_spikes_game_asset-removebg-preview_25: 1203113288
+      Animated_floor_spikes_game_asset-removebg-preview_26: -1828505157
+      Animated_floor_spikes_game_asset-removebg-preview_27: 1632943373
+      Animated_floor_spikes_game_asset-removebg-preview_3: 1693598458
+      Animated_floor_spikes_game_asset-removebg-preview_4: 613318090
+      Animated_floor_spikes_game_asset-removebg-preview_5: 1392381686
+      Animated_floor_spikes_game_asset-removebg-preview_6: 188382171
+      Animated_floor_spikes_game_asset-removebg-preview_7: -1197958062
+      Animated_floor_spikes_game_asset-removebg-preview_8: 1607026486
+      Animated_floor_spikes_game_asset-removebg-preview_9: 1794181741
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

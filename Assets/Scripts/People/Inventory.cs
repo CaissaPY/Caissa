@@ -11,18 +11,36 @@ public class Inventory
         collectedItems = new List<GameObject>();
     }
 
-    public void AddStone(GameObject stone)
+    public string ShowItems()
     {
-        collectedItems.Add(stone); // Agrega el objeto de piedra a la lista
+        string itemsString = "";
+        foreach (GameObject item in collectedItems)
+        {
+            itemsString += item.tag + ", ";
+        }
+        return itemsString;
     }
 
-    public void RemoveStone(GameObject stone)
+    public void AddItem(GameObject Item)
     {
-        collectedItems.Remove(stone); // Remueve el objeto de piedra de la lista
+        collectedItems.Add(Item); // Agrega el objeto a la lista
     }
 
-    public int GetStoneCount()
+    public void RemoveItem(GameObject Item)
     {
-        return collectedItems.Count; // Devuelve el número de piedras en el inventario
+        collectedItems.Remove(Item); // Remueve el objeto de la lista
     }
+
+    public int GetItemCount()
+    {
+        return collectedItems.Count; // Devuelve el número de items en el inventario
+    }
+
+    public int GetFilteredItemCount(string tag)
+    {
+        // Filtra los elementos por la etiqueta mandada por parámetro y devuelve el conteo del mismo
+        int filteredCount = collectedItems.FindAll(item => item.CompareTag(tag)).Count;
+        return filteredCount;
+    }
+
 }
