@@ -48,9 +48,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private Rigidbody2D rb;
 
     // Variables de sonido
-    public AudioClip jumpSound;
-    public AudioClip attackSound;
-    private AudioSource audioSource;
+    [SerializeField] 
+    private AudioClip jumpSound;
+    [SerializeField] 
+    private AudioClip doubleJumpSound;
+    [SerializeField] 
+    private AudioClip runSound;
+    // public AudioClip attackSound;
 
 
     //----------------------------------
@@ -81,7 +85,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // Obtener referencias a los componentes necesarios
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
 
         // // Buscar todos los objetos con el componente AudioListener en la escena
         // AudioListener[] audioListeners = FindObjectsOfType<AudioListener>();
@@ -126,12 +129,14 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             if (!isJumping)
             {
                 Jump();
-                canDoubleJump = true;
+                canDoubleJump = true;           
+                ControllerAudio.Instance.ExecuteSound(jumpSound);     
             }
             else if (canDoubleJump)
             {
                 DoubleJump();
                 canDoubleJump = false;
+                ControllerAudio.Instance.ExecuteSound(doubleJumpSound);
             }
         }
 
@@ -204,6 +209,8 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private void UpdateAnimator(bool isRunning)
     {
         animator.SetBool("run", isRunning);
+        
+
     }
 
     public void Jump()
@@ -334,26 +341,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     }
 
 
-
-
-    // private void PlayJumpSound()
-    // {
-    //     audioSource.PlayOneShot(jumpSound);
-    // }
-
-    // private void PlayAttackSound()
-    // {
-    //     audioSource.PlayOneShot(attackSound);
-    // }
-
-    // // Detectar si el personaje está en el suelo
-    // private void OnCollisionEnter(Collision collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-    //         isGrounded = true;
-    //     }
-    // }
 
 
 }
