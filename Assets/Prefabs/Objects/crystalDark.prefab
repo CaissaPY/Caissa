@@ -136,5 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6cd3b8393cb13488589103fe7f9520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineralsPoint: 3
-  textMineralsPoint: {fileID: 0}
+  mineralsPoint: 1
