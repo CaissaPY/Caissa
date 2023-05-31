@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 {
-    // Variables de movimiento
+    [Header("Variables de movimiento")]
     private bool right;
     private bool left;
     private bool up;
     private bool down;
     private bool space;
 
-    // Variables de movimiento
+    [Header("Variables de velocidad de movimiento")]
     public float moveSpeed = 5f;
     
-    // Salto y Doble salto
+    [Header("Salto y Doble salto")]
     [SerializeField] 
     public float jumpForce = 4f;
     private bool isJumping = false;
@@ -23,22 +24,21 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
 
-    // Variables de combate
-    [SerializeField] 
+    [Header("Variables de combate con espada")]
+    [Tooltip("Estado del ataque")]
+    private bool isAttack = false;
+    [SerializeField] [Tooltip("Tiempo para dar el siguiente ataque")]
     private float nextAttackTime;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Tiempo de espera para el siguiente ataque")]
     private float CooldownNextAttack = 1f;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Un objeto que dibuja el Raycast(rojo)")]
     private Transform HitController;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Radio del ataque")]
     private float attackRate = 1f;
-    [SerializeField] 
+    [SerializeField] [Tooltip("daño del ataque")]
     private int attackDamage = 10;
 
-    // Variables de control
-    // private bool isGrounded = false;
-
-    // Variables de salud y defensa
+     [Header("Variables de salud y defensa")]
     public Image heart;
     public Image defense;
     [SerializeField]
@@ -50,35 +50,33 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField]
     private float currentHealth;
 
-    // Variables de animación
+    [Header("Variables de animación y Rigidbody")]
     private Animator animator;
     private Rigidbody2D rb;
 
-    // Variables de sonido
-    [SerializeField] 
+    [Header("Variables de audio")]
+    [SerializeField] [Tooltip("Audio del primer salto")]
     private AudioClip jumpSound;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Audio del segundo salto")]
     private AudioClip doubleJumpSound;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Audio de correr")]
     private AudioClip runSound;
-    // public AudioClip attackSound;
+    [SerializeField] [Tooltip("Audio del ataque a cuerpo")]
+    private AudioClip attackSound;
 
-
-    //----------------------------------
-    // Variable de inventario
-    //----------------------------------
+    [Tooltip(" Variable de inventario")]
     private Inventory inventory;
 
-
-    //----------------------------------
-    // Variables para ocultar al jugador
-    //----------------------------------
-    public float transparencyValue = 0.5f; // Valor de transparencia cuando se presiona el botón hacia abajo
-    private bool isHidden = false; // Indica si el jugador está oculto
-    private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer
-    [SerializeField] 
+    [Header("Variables para ocultar al jugador")] 
+    [Tooltip("Valor de transparencia cuando se presiona el botón hacia abajo")]
+    public float transparencyValue = 0.5f; 
+    [Tooltip("Indica si el jugador está oculto")]
+    private bool isHidden = false; 
+    [Tooltip("Referencia al componente SpriteRenderer")]
+    private SpriteRenderer spriteRenderer; 
+    [SerializeField] [Tooltip("Tiempo para volverse invisible")]
     private float nextInvisibleTime;
-    [SerializeField] 
+    [SerializeField] [Tooltip("Tiempo de espera para volverse invisible")]
     private float CooldownNextInvisible = 1f;
     ///////////////////////////////////////////////////////////////
 
@@ -95,26 +93,11 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        // // Buscar todos los objetos con el componente AudioListener en la escena
-        // AudioListener[] audioListeners = FindObjectsOfType<AudioListener>();
-        // // Si se encuentran más de un AudioListener
-        // if (audioListeners.Length > 1)
-        // {
-        //     // Desactivar todos los AudioListeners excepto el primero
-        //     for (int i = 1; i < audioListeners.Length; i++)
-        //     {
-        //         audioListeners[i].enabled = false;
-                
-        //           Debug.Log("Nombre del objeto: " + audioListeners[i].gameObject.name);
-        //     }
-
-        //     Debug.LogWarning("Se encontraron múltiples AudioListeners en la escena. Se desactivaron los extras.");
-        // }
     }
 
     private void Start()
     {
-        inventory = new Inventory(); // Inicializar el inventario
+        inventory = new Inventory(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -157,9 +140,10 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextAttackTime -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0)
         {
             Attack();
+            nextAttackTime = CooldownNextAttack;
         }
 
         //----------------------------------
@@ -170,9 +154,10 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextInvisibleTime -= Time.deltaTime;
         }
 
-        if (down)
+        if (down && nextInvisibleTime <= 0)
         {
-            ActivateInvisibility();
+            ActivateInvisibility();            
+            nextInvisibleTime = CooldownNextInvisible;
         }
 
         //----------------------------------
@@ -220,9 +205,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     }
 
-    private void UpdateAnimator(bool isRunning)
+    private void UpdateAnimator(bool state)
     {
-        animator.SetBool("run", isRunning);
+        animator.SetBool("run", state);
     }
 
     public void Jump()
@@ -270,35 +255,39 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     }
     
 
+
+    //----------------------------------
+    // Si el enemigo tiene la clase abstract de IDestructible, le hace daño a cuerpo
+    //----------------------------------
     public void Attack()
     {
-        if (nextAttackTime <= 0)
-        {
-            // Lógica de ataque
-            Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);
-            
-            foreach(Collider2D collider in objects){
+        // Solo daña si es enemigo
+        animator.SetTrigger("AttackMelee");
+        // Lógica de ataque
+        Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);
+        
+        foreach(Collider2D collider in objects){
 
-                if(collider.CompareTag("Enemy")){
+            if(collider.CompareTag("Enemy")){
 
-                    IDestructible obj = collider.GetComponent<IDestructible>();
+                IDestructible obj = collider.GetComponent<IDestructible>();
 
-                    if (obj != null){
-                        obj.TakeDamage(attackDamage);
-                        Debug.Log("atacado");
-                    }
-
+                if (obj != null){
+                    obj.TakeDamage(attackDamage);
                 }
+
             }
-            // PlayAttackSound();
-
-            // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
-            // nextAttackTime = Time.time + 1f / attackRate;
-
-            nextAttackTime = CooldownNextAttack;
         }
+        // PlayAttackSound();
+
+        // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
+        // nextAttackTime = Time.time + 1f / attackRate;
+
     }
 
+    //----------------------------------
+    // Sirve para recibir el daño
+    //----------------------------------
     public void TakeDamage(int damageAmount)
     {   
         if(currentDefense <= 0){
@@ -319,40 +308,40 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     
     public void Die()
     {
-        // Lógica de muerte del personaje
+        // Lógica de muerte del personaje: Reiniciar el juego
         Debug.Log("Estas muerto");
+        SceneManager.LoadScene(1);
     }
 
+    //----------------------------------
+    // Sirve para dibujar el Raycast del rango de ataque
+    //----------------------------------
     private void OnDrawGizmos(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(HitController.position, attackRate);
     }
 
+    //----------------------------------
+    // Lógica de ActivateInvisibility del personaje
+    //----------------------------------
     public void ActivateInvisibility()
     {
-        // Lógica de ActivateInvisibility del personaje
-        
-        if (nextInvisibleTime <= 0)
+        // Lógica de ataque
+        isHidden = !isHidden;
+
+        if (isHidden)
         {
-            // Lógica de ataque
-            isHidden = !isHidden;
-
-            if (isHidden)
-            {
-                // Cambiar el color del SpriteRenderer para hacer al jugador transparente
-                Color newColor = spriteRenderer.color;
-                newColor.a = transparencyValue;
-                spriteRenderer.color = newColor;
-            }
-            else
-            {
-                // Restaurar la opacidad normal del jugador
-                Color newColor = spriteRenderer.color;
-                newColor.a = 1f;
-                spriteRenderer.color = newColor;
-            }
-
-            nextInvisibleTime = CooldownNextInvisible;
+            // Cambiar el color del SpriteRenderer para hacer al jugador transparente
+            Color newColor = spriteRenderer.color;
+            newColor.a = transparencyValue;
+            spriteRenderer.color = newColor;
+        }
+        else
+        {
+            // Restaurar la opacidad normal del jugador
+            Color newColor = spriteRenderer.color;
+            newColor.a = 1f;
+            spriteRenderer.color = newColor;
         }
     }
 
