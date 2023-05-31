@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Minerals : MonoBehaviour
 {
-    [SerializeField] private int mineralsPoint;
+    [SerializeField] [Header("Puntaje del mineral individual")]
+    private int mineralsPoint;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

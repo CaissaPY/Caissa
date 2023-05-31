@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class ControllerScore : MonoBehaviour
 {
     // Recolectar mineral
-    [SerializeField] 
+    [SerializeField] [Header("Puntaje del mineral base")]
     public static int totalMinerals;
-    [SerializeField] 
+    [SerializeField] [Header("Puntaje del mineral")]
     private Text textMineralsPoint;
     
     private void Update()
     {   
-        // this.totalMinerals += Time.deltaTime;
         textMineralsPoint.text = totalMinerals.ToString();
     }
 
