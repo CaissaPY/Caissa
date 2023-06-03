@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mob : MonoBehaviour, IDestructible
+public class Mob : MonoBehaviour, ICharacter
 {
     public float speed1 = 0.5f;
     public bool DerechaZ;
@@ -57,6 +57,12 @@ public class Mob : MonoBehaviour, IDestructible
 
     public void Die(){
         Destroy(gameObject);
+    }
+
+    public void Jump(){
+    }
+
+    public void Attack(){
     }
 
 }

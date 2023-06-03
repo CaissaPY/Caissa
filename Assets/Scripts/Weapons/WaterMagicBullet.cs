@@ -51,7 +51,7 @@ public class WaterMagicBullet : MonoBehaviour
 
         //         if(collider.CompareTag("Enemy")){
 
-        //             IDestructible obj = collider.GetComponent<IDestructible>();
+        //             ICharacter obj = collider.GetComponent<ICharacter>();
 
         //             if (obj != null){
         //                 obj.TakeDamage(attackDamage);
@@ -72,7 +72,7 @@ public class WaterMagicBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
 
 		if(other.CompareTag("Enemy")){
-        	IDestructible obj = other.GetComponent<IDestructible>();
+        	ICharacter obj = other.GetComponent<ICharacter>();
              if (obj != null){
 				obj.TakeDamage(attackDamage);
                 Die();

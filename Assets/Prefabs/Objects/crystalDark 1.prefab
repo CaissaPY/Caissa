@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6352374201269423796
+--- !u!1 &6039087375148159414
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4694696179922341566}
-  - component: {fileID: 5603502536978363516}
-  - component: {fileID: -8059707775117477163}
-  - component: {fileID: 8369237434410799739}
+  - component: {fileID: 6039087375148159412}
+  - component: {fileID: 6039087375148159307}
+  - component: {fileID: 6039087375148159413}
+  - component: {fileID: 440904657358178009}
+  - component: {fileID: -6926847624967661915}
   m_Layer: 0
-  m_Name: FloorSpikes
-  m_TagString: Untagged
+  m_Name: crystalDark 1
+  m_TagString: Minerals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4694696179922341566
+--- !u!4 &6039087375148159412
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6352374201269423796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.415, y: -0.102, z: 0}
+  m_GameObject: {fileID: 6039087375148159414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6211461, y: -0.20669508, z: -0.00005026086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5603502536978363516
+--- !u!212 &6039087375148159307
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6352374201269423796}
+  m_GameObject: {fileID: 6039087375148159414}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,58 +73,67 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -606917525
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 85946032, guid: 8edef5c97a66eee40abe49420490d022, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1266387486, guid: ef3177b9dff9efa4680524eb965edabc, type: 3}
+  m_Color: {r: 0, g: 0.8001066, b: 0.8207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.123333335, y: 0.17666666}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-8059707775117477163
-BoxCollider2D:
+--- !u!95 &6039087375148159413
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6352374201269423796}
+  m_GameObject: {fileID: 6039087375148159414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77d00f08bdff3ab4ca5ea4490cea5098, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &440904657358178009
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039087375148159414}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0006611347, y: 0.0024200976}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.123333335, y: 0.17666666}
-    newSize: {x: 0.123333335, y: 0.17666666}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.12399149, y: 0.16844496}
-  m_EdgeRadius: 0
---- !u!114 &8369237434410799739
+  m_Offset: {x: -0.0023442507, y: 0.004219711}
+  m_Size: {x: 0.033408403, y: 0.14030802}
+  m_Direction: 0
+--- !u!114 &-6926847624967661915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6352374201269423796}
+  m_GameObject: {fileID: 6039087375148159414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46c5679f6241c3c438d581be29c48ef5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e6cd3b8393cb13488589103fe7f9520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 100
-  nextDamageTime: 0
-  CooldownNextDamage: 1
+  mineralsPoint: 5
