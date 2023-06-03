@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextAttackTime -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0)
+        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0 && !isAttack)
         {
             Attack();
             nextAttackTime = CooldownNextAttack;
@@ -229,35 +229,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
         animator.SetBool("sky", true);
     }
-
-    private void OnCollisionEnter2D(Collision2D other){
-        
-        // identificar un Objeto piso con el Layer piso
-         if (other.gameObject.layer == LayerMask.NameToLayer("piso")){
-            isJumping = false;
-            animator.SetBool("sky", isJumping);
-        }
-
-        // Agregar items al inventario
-        // if (other.gameObject.CompareTag("SkyMineral"))
-        // {
-            // // Agregar la Mineral actual al inventario
-            // inventory.AddItem(other.gameObject); 
-
-            // // Objetos en el inventario y SkyMineral
-            // Debug.Log($"total del inventario: {inventory.GetItemCount()}  "); 
-            // Debug.Log($"total de minerales: {inventory.GetFilteredItemCount("SkyMineral")} "); 
-            // Debug.Log($"items: {inventory.ShowItems()}   "); 
-            
-            /* Destruir el objeto de Mineral recolectada */
-        //     Destroy(other.gameObject); 
-        // }
-    }
-    
-
-
+ 
     //----------------------------------
-    // Si el enemigo tiene la clase abstract de IDestructible, le hace daño a cuerpo
+    // Si el enemigo tiene la clase abstract de ICharacter, le hace daño a cuerpo
     //----------------------------------
     public void Attack()
     {
@@ -270,7 +244,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
             if(collider.CompareTag("Enemy")){
 
-                IDestructible obj = collider.GetComponent<IDestructible>();
+                ICharacter obj = collider.GetComponent<ICharacter>();
 
                 if (obj != null){
                     obj.TakeDamage(attackDamage);
@@ -283,6 +257,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
         // nextAttackTime = Time.time + 1f / attackRate;
 
+        isAttack = false;
     }
 
     //----------------------------------
@@ -326,7 +301,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     //----------------------------------
     public void ActivateInvisibility()
     {
-        // Lógica de ataque
+        // Lógica de invisible
         isHidden = !isHidden;
 
         if (isHidden)
@@ -345,7 +320,29 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other){
+        
+        // identificar un Objeto piso con el Layer piso
+         if (other.gameObject.layer == LayerMask.NameToLayer("piso")){
+            isJumping = false;
+            animator.SetBool("sky", isJumping);
+        }
 
+        // Agregar items al inventario
+        // if (other.gameObject.CompareTag("SkyMineral"))
+        // {
+            // // Agregar la Mineral actual al inventario
+            // inventory.AddItem(other.gameObject); 
+
+            // // Objetos en el inventario y SkyMineral
+            // Debug.Log($"total del inventario: {inventory.GetItemCount()}  "); 
+            // Debug.Log($"total de minerales: {inventory.GetFilteredItemCount("SkyMineral")} "); 
+            // Debug.Log($"items: {inventory.ShowItems()}   "); 
+            
+            /* Destruir el objeto de Mineral recolectada */
+        //     Destroy(other.gameObject); 
+        // }
+    }
 
 
 }

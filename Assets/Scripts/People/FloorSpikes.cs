@@ -32,7 +32,7 @@ public class FloorSpikes : MonoBehaviour
         //----------------------------------
         // El FloorSpikes ataca al Player
         //----------------------------------
-        if (other.gameObject.CompareTag("Player")){
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")){
             
             if (nextDamageTime <= 0)
             {
