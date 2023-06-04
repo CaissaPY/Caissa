@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField] 
     public float jumpForce = 4f;
     private bool isJumping = false;
+    private bool isGround = true;
 
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
@@ -116,7 +117,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         //----------------------------------
         // El Player Salte y doble salto
         //----------------------------------
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
         {
             if (!isJumping)
             {
@@ -140,7 +141,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextAttackTime -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0 && !isAttack)
+        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0 && !isAttack && isGround == true)
         {
             Attack();
             nextAttackTime = CooldownNextAttack;

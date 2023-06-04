@@ -5639,6 +5639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mob1
       objectReference: {fileID: 0}
+    - target: {fileID: 81721616797295577, guid: d5d2ca7464cde794585595a827f52d88, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 81721616797295580, guid: d5d2ca7464cde794585595a827f52d88, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5705,6 +5709,10 @@ PrefabInstance:
       propertyPath: defense
       value: 
       objectReference: {fileID: 125797215}
+    - target: {fileID: 5205665385807823123, guid: f472f57fbec72d34091fc6448b6a1eeb, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5205665385807823125, guid: f472f57fbec72d34091fc6448b6a1eeb, type: 3}
       propertyPath: m_RootOrder
       value: 0
