@@ -16,18 +16,23 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [Header("Variables de velocidad de movimiento")]
     public float moveSpeed = 5f;
     
+    [Header("Detectar el suelo")]
+	public Transform groundCheck;
+	public LayerMask groundLayer;
+	public float groundCheckRadius;
+    private bool isGrounded;
+
     [Header("Salto y Doble salto")]
     [SerializeField] 
     public float jumpForce = 4f;
     private bool isJumping = false;
-    private bool isGround = true;
-
+    
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
 
     [Header("Variables de combate con espada")]
     [Tooltip("Estado del ataque")]
-    private bool isAttack = false;
+    private bool isAttacking;
     [SerializeField] [Tooltip("Tiempo para dar el siguiente ataque")]
     private float nextAttackTime;
     [SerializeField] [Tooltip("Tiempo de espera para el siguiente ataque")]
@@ -113,22 +118,33 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         //----------------------------------
         // El Player se mueva
         //----------------------------------
-        Move();
+		if (isAttacking == false) {
+            Move();
+        }
+
+        //----------------------------------
+        // Detectar si esta en el piso o suelo
+        //----------------------------------
+        // Is Grounded?
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
         //----------------------------------
         // El Player Salte y doble salto
         //----------------------------------
-        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
+        if (space && isAttacking == false)
         {
-            if (!isJumping)
+            if (!isJumping && isGrounded == true)
             {
+                isJumping = true;
                 Jump();
                 canDoubleJump = true;           
-                ControllerAudio.Instance.ExecuteSound(jumpSound);     
+                ControllerAudio.Instance.ExecuteSound(jumpSound);    
             }
-            else if (canDoubleJump)
+            else if (canDoubleJump && isGrounded == false)
             {
                 DoubleJump();
                 canDoubleJump = false;
+                isJumping = false;
                 ControllerAudio.Instance.ExecuteSound(doubleJumpSound);
             }
         }
@@ -140,13 +156,17 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         {
             nextAttackTime -= Time.deltaTime;
         }
+        if (nextAttackTime <= 0){
+			isAttacking = false;
 
-        if (Input.GetKeyDown(KeyCode.T) && nextAttackTime <= 0 && !isAttack && isGround == true)
-        {
-            Attack();
-            nextAttackTime = CooldownNextAttack;
+            if (Input.GetKeyDown(KeyCode.T) && isAttacking == false && isGrounded == true)
+            {
+                Attack();
+                nextAttackTime = CooldownNextAttack;
+                isAttacking = true;
+            }
         }
-
+        
         //----------------------------------
         // Ocultar al jugador
         //----------------------------------
@@ -186,9 +206,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         if(isMoving){
             float moveDirection = left ? -1f : 1f;
             MoveHorizontally(moveDirection);
-            UpdateAnimator(true);
+            UpdateAnimatorMove(true);
         }else{
-            UpdateAnimator(false);
+            UpdateAnimatorMove(false);
         }
 
     }
@@ -206,7 +226,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     }
 
-    private void UpdateAnimator(bool state)
+    private void UpdateAnimatorMove(bool state)
     {
         animator.SetBool("run", state);
     }
@@ -214,7 +234,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public void Jump()
     {
         // Lógica de saltar del personaje
-        isJumping = true;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         animator.SetBool("sky", isJumping);
 
@@ -228,7 +247,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // Aplicar la fuerza del doble salto
         rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
 
-        animator.SetBool("sky", true);
+        animator.SetBool("sky", canDoubleJump);
     }
  
     //----------------------------------
@@ -258,7 +277,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
         // nextAttackTime = Time.time + 1f / attackRate;
 
-        isAttack = false;
     }
 
     //----------------------------------
@@ -295,6 +313,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private void OnDrawGizmos(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(HitController.position, attackRate);
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 
     //----------------------------------
