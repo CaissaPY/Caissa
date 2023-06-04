@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlatformNoTouychable : MonoBehaviour
 {
@@ -8,12 +9,12 @@ public class PlatformNoTouychable : MonoBehaviour
     public float transparencyValue = 0.5f; 
     [Tooltip("Indica si la pared está oculto")]
     private bool isHidden = false; 
-    [Tooltip("Referencia al componente SpriteRenderer")]
-    private SpriteRenderer spriteRenderer; 
+    [Tooltip("Referencia al componente Tilemap")]
+    private Tilemap tilemap; 
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        tilemap = GetComponent<Tilemap>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,9 +38,9 @@ public class PlatformNoTouychable : MonoBehaviour
     {
         if (!isHidden)
         {
-            Color newColor = spriteRenderer.color;
+            Color newColor = tilemap.color;
             newColor.a = alpha;
-            spriteRenderer.color = newColor;
+            tilemap.color = newColor;
         }
     }
 
