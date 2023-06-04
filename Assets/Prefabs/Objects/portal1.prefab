@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinations:
-  - {fileID: 5206228196808035567, guid: 70ee0f65e0a005942aa78a698a51061b, type: 3}
+  - {fileID: 0}
   displacement: {x: 1, y: 0, z: 0}
