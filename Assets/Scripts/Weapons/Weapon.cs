@@ -11,15 +11,16 @@ public class Weapon : MonoBehaviour
 
 	private Transform _firePoint;
 
-	void Awake()
+    [Tooltip("Tiempo para volverse invisible")]
+    public static float nextWaterBallTime;
+    [SerializeField]
+    [Tooltip("Tiempo de espera para volverse invisible")]
+    private float CooldownWaterBall = 1f;
+
+    void Awake()
 	{
 		// Añada al hijo "FirePoint"
 		_firePoint = transform.Find("FirePoint");
-	}
-
-	void Start()
-    {
-		Invoke("Shoot", 1);
 	}
 
 	enum BulletTypes
@@ -32,9 +33,20 @@ public class Weapon : MonoBehaviour
 	}
 
 	void ShooterWithKeyCode(){
-		if (Input.GetKeyDown(KeyCode.F)) {
-			Shoot();
-		}
+
+        if (nextWaterBallTime > 0)
+        {
+            nextWaterBallTime -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.U) && nextWaterBallTime <= 0)
+        {
+            Invoke("Shoot", 0.1f);
+            Invoke("Shoot", 0.2f);
+            Invoke("Shoot", 0.3f);
+            nextWaterBallTime = CooldownWaterBall;
+        }
+
 	}
 
 	void Shoot()
@@ -49,22 +61,12 @@ public class Weapon : MonoBehaviour
                 // bulletComponent.direction = (shooter.transform.localScale.x < 0f) ? Vector2.left : Vector2.right;
 				// Debug.Log(playerController.transform.rotation.eulerAngles.y+"[X]");
                 bulletComponent.direction = (playerController.transform.rotation.eulerAngles.y == 180) ? Vector2.left : Vector2.right;
-			}
-			else
-            {
+			} else {
                 Bullet bulletComponent = myBullet.GetComponent<Bullet>();
                 bulletComponent.direction = (shooter.transform.localScale.x < 0f) ? Vector2.left : Vector2.right;
             }
 
         }
-
-			// if (shooter.transform.localScale.x < 0f) {
-			// 	// Left
-			// 	bulletComponent.direction = Vector2.left; // new Vector2(-1f, 0f)
-			// } else {
-			// 	//Right
-			// 	bulletComponent.direction = Vector2.right; // new Vector2(1f, 0f)
-			// }
 		
 	}
 }

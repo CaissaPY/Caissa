@@ -236,8 +236,11 @@ MonoBehaviour:
   runSound: {fileID: 0}
   attackSound: {fileID: 0}
   transparencyValue: 0.5
-  nextInvisibleTime: 0
-  CooldownNextInvisible: 1
+  nextInvisibleTime: 3
+  CooldownNextInvisible: 3
+  waterBall: {fileID: 0}
+  melee: {fileID: 0}
+  breakLimit: {fileID: 0}
 --- !u!114 &5205665385807823597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,3 +423,4 @@ MonoBehaviour:
   shooter: {fileID: 4680556551535873199}
   playerController: {fileID: 5205665385807823129}
   BulletType: WaterMagicBullet
+  CooldownWaterBall: 1
