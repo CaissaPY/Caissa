@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     private bool down;
     private bool space;
 
+    private bool secondSkill;
+    private bool thirdSkill;
+
     [Header("Variables de velocidad de movimiento")]
     public float moveSpeed = 5f;
     
@@ -83,8 +86,12 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField] [Tooltip("Tiempo para volverse invisible")]
     private float nextInvisibleTime;
     [SerializeField] [Tooltip("Tiempo de espera para volverse invisible")]
-    private float CooldownNextInvisible = 1f;
-    ///////////////////////////////////////////////////////////////
+    private float CooldownNextInvisible = 3f;
+
+    [Header("GUI Para el Cooldown de las habilidades")]
+    public Image waterBall;
+    public Image melee;
+    public Image breakLimit;
 
 
 
@@ -159,7 +166,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         if (nextAttackTime <= 0){
 			isAttacking = false;
 
-            if (Input.GetKeyDown(KeyCode.T) && isAttacking == false && isGrounded == true)
+            if (secondSkill && isAttacking == false && isGrounded == true)
             {
                 Attack();
                 nextAttackTime = CooldownNextAttack;
@@ -175,7 +182,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             nextInvisibleTime -= Time.deltaTime;
         }
 
-        if (down && nextInvisibleTime <= 0)
+        if (thirdSkill && nextInvisibleTime <= 0)
         {
             ActivateInvisibility();            
             nextInvisibleTime = CooldownNextInvisible;
@@ -185,7 +192,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         // GUI de vida y defensa
         //----------------------------------
         heart.fillAmount = currentHealth / maxHealth; 
-        defense.fillAmount = currentDefense / maxDefense;    
+        defense.fillAmount = currentDefense / maxDefense;
+        //----------------------------------
+        // GUI Para el cooldown de las habilidades
+        //---------------------------------- 
+        breakLimit.fillAmount = nextInvisibleTime;
+        melee.fillAmount = nextAttackTime;
+        waterBall.fillAmount = Weapon.nextWaterBallTime;
 
     }
 
@@ -196,6 +209,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         down = Input.GetKey(KeyCode.DownArrow);
 
         space = Input.GetKeyDown(KeyCode.Space);
+
+        secondSkill = Input.GetKeyDown(KeyCode.I);
+        thirdSkill = Input.GetKeyDown(KeyCode.O);
     }
 
     public void Move()

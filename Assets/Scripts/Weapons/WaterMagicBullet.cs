@@ -40,35 +40,6 @@ public class WaterMagicBullet : MonoBehaviour
 
 	}
 
-    public void Attack()
-    {
-        // if (nextAttackTime <= 0)
-        // {
-        //     // Lógica de ataque
-        //     Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);
-            
-        //     foreach(Collider2D collider in objects){
-
-        //         if(collider.CompareTag("Enemy")){
-
-        //             ICharacter obj = collider.GetComponent<ICharacter>();
-
-        //             if (obj != null){
-        //                 obj.TakeDamage(attackDamage);
-        //                 Debug.Log("atacado");
-        //             }
-
-        //         }
-        //     }
-        //     // PlayAttackSound();
-
-        //     // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
-        //     // nextAttackTime = Time.time + 1f / attackRate;
-
-        //     nextAttackTime = Cooldown;
-        // }
-    }
-
     private void OnTriggerEnter2D(Collider2D other){
 
 		if(other.CompareTag("Enemy")){
