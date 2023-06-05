@@ -23,19 +23,19 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 	public Transform groundCheck;
 	public LayerMask groundLayer;
 	public float groundCheckRadius;
-    private bool isGrounded;
+    public static bool isGrounded;
 
     [Header("Salto y Doble salto")]
     [SerializeField] 
     public float jumpForce = 4f;
-    private bool isJumping = false;
+    public static bool isJumping = false;
     
     private bool canDoubleJump = false;
     public float doubleJumpForce = 4f;
 
     [Header("Variables de combate con espada")]
     [Tooltip("Estado del ataque")]
-    private bool isAttacking;
+    public static bool isAttacking;
     [SerializeField] [Tooltip("Tiempo para dar el siguiente ataque")]
     private float nextAttackTime;
     [SerializeField] [Tooltip("Tiempo de espera para el siguiente ataque")]
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField] [Tooltip("daño del ataque")]
     private int attackDamage = 10;
 
-     [Header("Variables de salud y defensa")]
+    [Header("Variables de salud y defensa")]
     public Image heart;
     public Image defense;
     [SerializeField]
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         //----------------------------------
         // El Player se mueva
         //----------------------------------
-		if (isAttacking == false) {
+		if (isAttacking == false && Weapon.isAttackingWithWaterBall == false) {
             Move();
         }
 
@@ -136,9 +136,9 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         //----------------------------------
-        // El Player Salte y doble salto
+        // El Player Salto y doble salto
         //----------------------------------
-        if (space && isAttacking == false)
+        if (space && isAttacking == false && Weapon.isAttackingWithWaterBall == false)
         {
             if (!isJumping && isGrounded == true)
             {
@@ -155,6 +155,10 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
                 ControllerAudio.Instance.ExecuteSound(doubleJumpSound);
             }
         }
+
+        //----------------------------------
+        //El Player ataque con bola de agua con su tiempo de recarga
+        //----------------------------------
 
         //----------------------------------
         //El Player ataque con un tiempo de recarga
@@ -272,6 +276,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public void Attack()
     {
         // Solo daña si es enemigo
+        // animation
         animator.SetTrigger("AttackMelee");
         // Lógica de ataque
         Collider2D[] objects = Physics2D.OverlapCircleAll(HitController.position, attackRate);

@@ -10,12 +10,15 @@ public class Weapon : MonoBehaviour
 	public string BulletType = "";
 
 	private Transform _firePoint;
-
+    
     [Tooltip("Tiempo para volverse invisible")]
     public static float nextWaterBallTime;
     [SerializeField]
     [Tooltip("Tiempo de espera para volverse invisible")]
     private float CooldownWaterBall = 1f;
+    [Tooltip("Estado del ataque con bola de agua")]
+    public static bool isAttackingWithWaterBall;
+
 
     void Awake()
 	{
@@ -33,21 +36,30 @@ public class Weapon : MonoBehaviour
 	}
 
 	void ShooterWithKeyCode(){
-
         if (nextWaterBallTime > 0)
         {
             nextWaterBallTime -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.U) && nextWaterBallTime <= 0)
+        if (nextWaterBallTime <= 0)
         {
-            Invoke("Shoot", 0.1f);
-            Invoke("Shoot", 0.2f);
-            Invoke("Shoot", 0.3f);
-            nextWaterBallTime = CooldownWaterBall;
-        }
+            isAttackingWithWaterBall = false;
 
-	}
+            if (Input.GetKeyDown(KeyCode.U) && isAttackingWithWaterBall == false && PlayerController.isAttacking == false && PlayerController.isGrounded == true)
+            {
+                // animacion del Player
+                playerController.GetComponent<Animator>().SetTrigger("WaterBall");
+
+                isAttackingWithWaterBall = true;
+
+                Invoke("Shoot", .5f);
+                Invoke("Shoot", .6f);
+                Invoke("Shoot", .7f);
+
+                nextWaterBallTime = CooldownWaterBall;
+            }
+        }
+    }
 
 	void Shoot()
 	{
@@ -55,6 +67,7 @@ public class Weapon : MonoBehaviour
 			GameObject myBullet = Instantiate(bulletPrefab, _firePoint.position, Quaternion.identity) as GameObject;
             // Debug.Log(BulletTypes.Bullet.ToString().GetType());
             
+
             if (BulletType.Equals(BulletTypes.WaterMagicBullet.ToString()))
 			{
                 WaterMagicBullet bulletComponent = myBullet.GetComponent<WaterMagicBullet>();
