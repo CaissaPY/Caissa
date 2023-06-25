@@ -7,7 +7,7 @@ public class CombateCaC : MonoBehaviour
     [Header("Ataque")]
     [SerializeField] private Transform controladorGolpe ;
     [SerializeField] private float radioGolpe ;
-    [SerializeField] private int dañoGolpe;
+    [SerializeField] private float daño;
     [SerializeField] private float tiempoAtque;
     [SerializeField] private float tiempoSigAtaque;
     private Animator animator;
@@ -34,9 +34,9 @@ public class CombateCaC : MonoBehaviour
 
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position,radioGolpe); 
         foreach(Collider2D colisionador in objetos){
-            if (colisionador.CompareTag("Enemy"))
+            if (colisionador.CompareTag("Boss"))
             {
-                colisionador.transform.GetComponent<Mob>().TakeDamage(dañoGolpe);
+                colisionador.transform.GetComponent<boss>().TomarDaño(daño);
             }
 
         }

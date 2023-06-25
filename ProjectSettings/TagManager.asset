@@ -11,6 +11,7 @@ TagManager:
   - Portal2
   - Tavern
   - Minerals
+  - Boss
   layers:
   - Default
   - TransparentFX
