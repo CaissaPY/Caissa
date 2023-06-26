@@ -1985,7 +1985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6367816, y: 0.64221996, z: -9.978784}
+  m_LocalPosition: {x: -1.5143082, y: 0.64251, z: -9.978784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2732,8 +2732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 360, y: 196.20001}
-  m_SizeDelta: {x: -750, y: -434}
+  m_AnchoredPosition: {x: 368.57996, y: 199.46997}
+  m_SizeDelta: {x: -767.15, y: -427.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793689465
 MonoBehaviour:
@@ -2781,7 +2781,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2000858023}
         m_TargetAssemblyTypeName: Return, Assembly-CSharp
-        m_MethodName: return2
+        m_MethodName: return1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11816,7 +11816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -260.31934, y: 141.86002}
+  m_AnchoredPosition: {x: -260.31934, y: 141.85999}
   m_SizeDelta: {x: -760.71, y: -464.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352146654
