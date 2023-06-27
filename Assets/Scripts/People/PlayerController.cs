@@ -73,12 +73,11 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     [SerializeField] [Tooltip("Audio del ataque a cuerpo")]
     private AudioClip attackSound;
 
-    [Tooltip(" Variable de inventario")]
-    private Inventory inventory;
-
-    [Header("Variables para ocultar al jugador")] 
+    [Header("Variables para ocultar al jugador")]
     [Tooltip("Valor de transparencia cuando se presiona el botón hacia abajo")]
-    public float transparencyValue = 0.5f; 
+    public float transparencyValue = 0.5f;
+    [Tooltip("Incremento bonus al estar invisible")]
+    public float bonusHidden = 1f;
     [Tooltip("Indica si el jugador está oculto")]
     private bool isHidden = false; 
     [Tooltip("Referencia al componente SpriteRenderer")]
@@ -92,8 +91,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public Image waterBall;
     public Image melee;
     public Image breakLimit;
-
-
 
     private void Awake()
     {
@@ -110,7 +107,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
     private void Start()
     {
-        inventory = new Inventory(); 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -157,7 +153,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         }
 
         //----------------------------------
-        //El Player ataque con bola de agua con su tiempo de recarga
+        //El Player ataque con bola de agua con su tiempo de recarga: Esta en el prefab de la bala de agua
         //----------------------------------
 
         //----------------------------------
@@ -185,11 +181,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
         {
             nextInvisibleTime -= Time.deltaTime;
         }
-
-        if (thirdSkill && nextInvisibleTime <= 0)
+        if (nextInvisibleTime <= 0)
         {
-            ActivateInvisibility();            
-            nextInvisibleTime = CooldownNextInvisible;
+            if (thirdSkill)
+            {
+                ActivateInvisibility();
+                nextInvisibleTime = CooldownNextInvisible;
+            }
         }
 
         //----------------------------------
@@ -234,8 +232,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     }
 
     private void MoveHorizontally(float direction)
-    {
-        // Lógica de movimiento común para todos los personajes
+    {        
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         RotateCharacter(direction);
     }
@@ -254,7 +251,8 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public void Jump()
     {
         // Lógica de saltar del personaje
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        float newJumpForce = isHidden ? jumpForce + bonusHidden : jumpForce;
+        rb.AddForce(Vector2.up * newJumpForce, ForceMode2D.Impulse);
         animator.SetBool("sky", isJumping);
 
     }   
@@ -293,10 +291,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
 
             }
         }
-        // PlayAttackSound();
-
-        // Actualizar el tiempo para el próximo ataque: Da un cooldown random extenso
-        // nextAttackTime = Time.time + 1f / attackRate;
 
     }
 
@@ -343,14 +337,13 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
     public void ActivateInvisibility()
     {
         // Lógica de invisible
-        isHidden = !isHidden;
-
-        if (isHidden)
+        if (!isHidden)
         {
             // Cambiar el color del SpriteRenderer para hacer al jugador transparente
             Color newColor = spriteRenderer.color;
             newColor.a = transparencyValue;
             spriteRenderer.color = newColor;
+            isHidden = true;
         }
         else
         {
@@ -358,6 +351,7 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             Color newColor = spriteRenderer.color;
             newColor.a = 1f;
             spriteRenderer.color = newColor;
+            isHidden = false;
         }
     }
 
@@ -368,21 +362,6 @@ public class PlayerController : MonoBehaviour, ICharacter, IPlayer
             isJumping = false;
             animator.SetBool("sky", isJumping);
         }
-
-        // Agregar items al inventario
-        // if (other.gameObject.CompareTag("SkyMineral"))
-        // {
-            // // Agregar la Mineral actual al inventario
-            // inventory.AddItem(other.gameObject); 
-
-            // // Objetos en el inventario y SkyMineral
-            // Debug.Log($"total del inventario: {inventory.GetItemCount()}  "); 
-            // Debug.Log($"total de minerales: {inventory.GetFilteredItemCount("SkyMineral")} "); 
-            // Debug.Log($"items: {inventory.ShowItems()}   "); 
-            
-            /* Destruir el objeto de Mineral recolectada */
-        //     Destroy(other.gameObject); 
-        // }
     }
 
 
